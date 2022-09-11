@@ -31,6 +31,14 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+.idea
+android
+build
+ios
+linux
+macos
+test
+windows
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -46,13 +54,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-/.dart_tool
-/.idea
-/android
-/build
-/ios
-/linux
-/macos
-/test
-/windows
+
+
 
