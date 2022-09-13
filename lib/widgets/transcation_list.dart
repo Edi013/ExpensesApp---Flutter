@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 import '../models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
-  List<Transaction> _userTransactions;
-  Function _deleteTransaction;
+  late List<Transaction> _userTransactions;
+  late Function _deleteTransaction;
 
   TransactionList(List<Transaction> list, Function deleteTransaction2) {
     _userTransactions = list.reversed.toList();
@@ -63,7 +63,7 @@ class TransactionList extends StatelessWidget {
                               fontFamily: Theme.of(context)
                                   .appBarTheme
                                   .titleTextStyle
-                                  .fontFamily,
+                                  ?.fontFamily,
                             ),
                           ),
                         ),
@@ -77,19 +77,26 @@ class TransactionList extends StatelessWidget {
                         fontFamily: Theme.of(context)
                             .appBarTheme
                             .titleTextStyle
-                            .fontFamily,
+                            ?.fontFamily,
                       ),
                     ),
                     subtitle: Text(
                       DateFormat.yMMMd().format(_userTransactions[index].date),
                     ),
                     trailing: MediaQuery.of(context).size.width > 460
-                        ? FlatButton.icon(
+                        ? TextButton.icon(
                             onPressed: () =>
                                 _deleteTransaction(_userTransactions[index].id),
                             icon: Icon(Icons.delete),
                             label: Text('Delete'),
-                            textColor: Theme.of(context).errorColor,
+                            style: ButtonStyle(
+                              textStyle: MaterialStateProperty.all(
+                                TextStyle(
+                                  color: Theme.of(context).errorColor,
+                                ),
+                              ),
+                            ),
+                            // textColor: Theme.of(context).errorColor,
                           )
                         : IconButton(
                             icon: Icon(Icons.delete),

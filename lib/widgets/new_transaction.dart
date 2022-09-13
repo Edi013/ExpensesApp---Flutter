@@ -1,4 +1,5 @@
-import 'package:expenses_app/main.dart';
+//import 'package:expenses_app/main.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -14,7 +15,7 @@ class NewTransaction extends StatefulWidget {
 class _NewTransactionState extends State<NewTransaction> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
-  DateTime _selectedDate;
+  late DateTime _selectedDate;
 
   void _subbmitData() {
     if (_amountController.text.isEmpty) {
@@ -94,7 +95,7 @@ class _NewTransactionState extends State<NewTransaction> {
                             ? 'No Date Chosen !'
                             : DateFormat.yMd().format(_selectedDate),
                       ),
-                      FlatButton(
+                      TextButton(
                         onPressed: _presentDatePicker,
                         child: Text(
                           'Choose Date',
@@ -102,30 +103,42 @@ class _NewTransactionState extends State<NewTransaction> {
                             color: Theme.of(context)
                                 .textTheme
                                 .button
-                                .backgroundColor,
+                                ?.backgroundColor,
                             backgroundColor:
-                                Theme.of(context).textTheme.button.color,
+                                Theme.of(context).textTheme.button?.color,
                             fontWeight: FontWeight.bold,
                             fontFamily: Theme.of(context)
                                 .textTheme
                                 .headline6
-                                .fontFamily,
+                                ?.fontFamily,
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: _subbmitData,
-                  padding: EdgeInsets.all(15),
-                  textColor: Theme.of(context).textTheme.button.color,
-                  color: Theme.of(context).primaryColor,
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.all(15),
+                    textStyle: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      backgroundColor:
+                          Theme.of(context).textTheme.button?.color,
+                    ),
+                    primary:
+                        Theme.of(context).textTheme.button?.backgroundColor,
+                    shadowColor: Theme.of(context).textTheme.button?.color,
+                  ),
+                  //  textStyle: TextStyle(
+                  //  color: Theme.of(context).textTheme.button?.color,),
+
                   child: Text(
                     'Add transaction',
                     style: TextStyle(),
                   ),
                 ),
+
                 // ElevatedButton(
                 //   onPressed: subbmitData,
                 //   style: ElevatedButton.styleFrom(

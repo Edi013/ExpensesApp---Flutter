@@ -7,7 +7,7 @@ import './widgets/transcation_list.dart';
 import './widgets/chart.dart';
 
 //models
-import '../models/transaction.dart';
+import './models/transaction.dart';
 
 const globalPrimaryColor = Color.fromARGB(125, 19, 58, 131);
 const globalAccentColor = Color.fromARGB(167, 255, 193, 7);

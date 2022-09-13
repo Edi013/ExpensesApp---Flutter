@@ -36,7 +36,7 @@ class Chart extends StatelessWidget {
 
   double get totalSpending {
     return groupedTransactionValues.fold(0.0, (currentSum, item) {
-      return currentSum + item['amount'];
+      return currentSum + (item['amount']as num);
     });
   }
 
@@ -54,8 +54,8 @@ class Chart extends StatelessWidget {
               return Flexible(
                 fit: FlexFit.tight,
                 child: ChartBar(
-                  data['day'],
-                  data['amount'],
+                  (data['day']as String),
+                  (data['amount']as double),
                   totalSpending == 0.0
                       ? 0.0
                       : (data['amount'] as double) / totalSpending,
