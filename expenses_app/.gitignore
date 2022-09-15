@@ -33,9 +33,6 @@ migrate_working_dir/
 /build/
 
 .idea
-.packages
-analysis_options
-expenses_app
 
 
 # Symbolication related
