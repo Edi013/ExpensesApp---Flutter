@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 import '../models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
-  late List<Transaction> _userTransactions;
-  late Function _deleteTransaction;
+  List<Transaction> _userTransactions;
+  Function _deleteTransaction;
 
   TransactionList(List<Transaction> list, Function deleteTransaction2) {
     _userTransactions = list.reversed.toList();

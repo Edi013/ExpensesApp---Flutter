@@ -34,6 +34,10 @@ flutter_lints
 2.17
 file:///D:/technologii/AndroidStudio/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
 file:///D:/technologii/AndroidStudio/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib/
+intl
+2.12
+file:///D:/technologii/AndroidStudio/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/
+file:///D:/technologii/AndroidStudio/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib/
 lints
 2.17
 file:///D:/technologii/AndroidStudio/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.0/
@@ -95,7 +99,7 @@ flutter_test
 file:///D:/technologii/AndroidStudio/Flutter/flutter/packages/flutter_test/
 file:///D:/technologii/AndroidStudio/Flutter/flutter/packages/flutter_test/lib/
 expenses_app
-2.17
+2.2
 file:///D:/technologii/AndroidStudio/Flutter/visual_studio_code/072_expenses_app2/expenses_app/
 file:///D:/technologii/AndroidStudio/Flutter/visual_studio_code/072_expenses_app2/expenses_app/lib/
 2

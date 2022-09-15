@@ -15,7 +15,7 @@ class NewTransaction extends StatefulWidget {
 class _NewTransactionState extends State<NewTransaction> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
-  late DateTime _selectedDate;
+  DateTime _selectedDate;
 
   void _subbmitData() {
     if (_amountController.text.isEmpty) {
