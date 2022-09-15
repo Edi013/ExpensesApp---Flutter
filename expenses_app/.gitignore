@@ -33,6 +33,7 @@ migrate_working_dir/
 /build/
 
 .idea
+analysis_options.yaml
 
 
 # Symbolication related
