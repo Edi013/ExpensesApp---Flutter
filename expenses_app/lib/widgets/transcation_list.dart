@@ -26,7 +26,7 @@ class TransactionList extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ), //textTheme.headline6,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   Container(
@@ -87,16 +87,22 @@ class TransactionList extends StatelessWidget {
                         ? TextButton.icon(
                             onPressed: () =>
                                 _deleteTransaction(_userTransactions[index].id),
-                            icon: Icon(Icons.delete),
-                            label: Text('Delete'),
-                            style: ButtonStyle(
-                              textStyle: MaterialStateProperty.all(
-                                TextStyle(
-                                  color: Theme.of(context).errorColor,
-                                ),
+                            icon: Icon(
+                              Icons.delete,
+                              color: Theme.of(context).errorColor,
+                            ),
+                            label: Text(
+                              'Delete',
+                              style: TextStyle(
+                                color: Theme.of(context).errorColor,
                               ),
                             ),
-                            // textColor: Theme.of(context).errorColor,
+                            // style: TextButton.styleFrom(
+                            //   backgroundColor: Colors.white,
+                            //   textStyle: TextStyle(
+                            //     color: Theme.of(context).errorColor,
+                            //     // backgroundColor: Theme.of(context).errorColor,
+                            //   ),
                           )
                         : IconButton(
                             icon: Icon(Icons.delete),
@@ -110,48 +116,3 @@ class TransactionList extends StatelessWidget {
           );
   }
 }
-
-
-// Card(
-//                   child: Row(
-//                     children: [
-//                       Container(
-//                         padding: EdgeInsets.all(10),
-//                         margin: EdgeInsets.symmetric(
-//                           horizontal: 10,
-//                           vertical: 10,
-//                         ),
-//                         decoration: BoxDecoration(
-//                           border: Border.all(
-//                             color: Theme.of(context).primaryColor,
-//                             width: 2,
-//                           ),
-//                         ),
-//                         child: Text(
-//                           "\$${_userTransactions[index].amount.toStringAsFixed(2)}",
-//                           style: TextStyle(
-//                             fontWeight: FontWeight.bold,
-//                             fontSize: 18,
-//                             color: Theme.of(context).primaryColor,
-//                           ),
-//                         ),
-//                       ),
-//                       Column(
-//                         crossAxisAlignment: CrossAxisAlignment.start,
-//                         children: [
-//                           Text(
-//                             _userTransactions[index].title,
-//                             style: TextStyle(
-//                               fontWeight: FontWeight.bold,
-//                               fontSize: 16,
-//                             ),
-//                           ),
-//                           Text(
-//                             DateFormat.yMMMd()
-//                                 .format(_userTransactions[index].date),
-//                           ),
-//                         ],
-//                       ),
-//                     ],
-//                   ),
-//                 );

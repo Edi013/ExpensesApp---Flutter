@@ -13,13 +13,6 @@ const globalPrimaryColor = Color.fromARGB(125, 19, 58, 131);
 const globalAccentColor = Color.fromARGB(167, 255, 193, 7);
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // SystemChrome.setPreferredOrientations(
-  //   [
-  //     DeviceOrientation.portraitUp,
-  //     DeviceOrientation.portraitDown,
-  //   ],
-  // );
   runApp(MyApp());
 }
 
@@ -28,31 +21,31 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'ExpensesApp Demo - Flutter',
       theme: ThemeData(
         primaryColor: globalPrimaryColor,
         accentColor: globalAccentColor,
         fontFamily: "Quicksand",
-        errorColor: Color.fromARGB(171, 255, 0, 0), //Colors.red.shade900,
+        errorColor: Color.fromARGB(171, 255, 0, 0),
         textTheme: ThemeData.light().textTheme.copyWith(
-              headline6: TextStyle(
+              headline6: const TextStyle(
                 fontFamily: 'Quicksand',
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Color.fromARGB(183, 168, 0, 197),
               ),
-              headline5: TextStyle(
+              headline5: const TextStyle(
                 fontFamily: 'Opensans',
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Color.fromARGB(183, 168, 0, 197),
               ),
-              button: TextStyle(
+              button: const TextStyle(
                 color: Colors.white,
                 // backgroundColor: globalPrimaryColor,
               ),
             ),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: globalPrimaryColor,
           titleTextStyle: TextStyle(
             fontFamily: 'OpenSans',
@@ -84,8 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Transaction(
       id: 't2',
       title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now().subtract(const Duration(days: 2)),
+      amount: 12,
+      date: DateTime.now().subtract(Duration(days: 2)),
     ),
     Transaction(
       id: 't1',
@@ -95,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     Transaction(
       id: 't2',
-      title: 'Weekly Groceries',
+      title: 'Weekly Groceries12',
       amount: 16.53,
       date: DateTime.now().subtract(const Duration(days: 4)),
     ),
@@ -107,8 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     Transaction(
       id: 't2',
-      title: 'Weekly Groceries',
-      amount: 16.53,
+      title: 'Weekly Groceries312',
+      amount: 19,
       date: DateTime.now().subtract(const Duration(days: 6)),
     ),
     Transaction(
@@ -119,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     Transaction(
       id: 't2',
-      title: 'Weekly Groceries',
+      title: 'Weekly Groceries123112',
       amount: 16.53,
       date: DateTime.now().subtract(const Duration(days: 8)),
     ),

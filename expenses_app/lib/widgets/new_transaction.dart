@@ -100,13 +100,8 @@ class _NewTransactionState extends State<NewTransaction> {
                         child: Text(
                           'Choose Date',
                           style: TextStyle(
-                            color: Theme.of(context)
-                                .textTheme
-                                .button
-                                ?.backgroundColor,
-                            backgroundColor:
-                                Theme.of(context).textTheme.button?.color,
-                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.w600,
                             fontFamily: Theme.of(context)
                                 .textTheme
                                 .headline6
@@ -121,37 +116,15 @@ class _NewTransactionState extends State<NewTransaction> {
                   onPressed: _subbmitData,
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(15),
-                    textStyle: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      backgroundColor:
-                          Theme.of(context).textTheme.button?.color,
-                    ),
-                    primary:
-                        Theme.of(context).textTheme.button?.backgroundColor,
-                    shadowColor: Theme.of(context).textTheme.button?.color,
+                    primary: Theme.of(context).primaryColor,
                   ),
-                  //  textStyle: TextStyle(
-                  //  color: Theme.of(context).textTheme.button?.color,),
-
-                  child: Text(
+                  child: const Text(
                     'Add transaction',
-                    style: TextStyle(),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
-
-                // ElevatedButton(
-                //   onPressed: subbmitData,
-                //   style: ElevatedButton.styleFrom(
-                //     primary: Theme.of(context).textTheme.button.backgroundColor,
-                //     textStyle: TextStyle(
-                //       color: Theme.of(context).textTheme.button.color,
-                //     ),
-                //     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 11),
-                //   ),
-                //   child: Text(
-                //     'Add transaction',
-                //   ),
-                // )
               ],
             ),
           ),

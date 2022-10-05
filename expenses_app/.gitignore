@@ -38,7 +38,7 @@ analysis_options.yaml
 expenses_app.iml
 .dart_tool
 .idea
-*.packages
+.packages
 
 
 # Symbolication related
