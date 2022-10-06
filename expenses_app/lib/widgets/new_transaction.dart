@@ -1,7 +1,8 @@
-//import 'package:expenses_app/main.dart';
 import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import 'adaptive_flat_button.dart';
 
 class NewTransaction extends StatefulWidget {
   final Function _addNewTransaction;
@@ -93,21 +94,25 @@ class _NewTransactionState extends State<NewTransaction> {
                       Text(
                         _selectedDate == null
                             ? 'No Date Chosen !'
-                            : DateFormat.yMd().format(_selectedDate),
+                            : 'Picked Date: ${DateFormat.yMd().format(_selectedDate)}',
                       ),
-                      TextButton(
-                        onPressed: _presentDatePicker,
-                        child: Text(
-                          'Choose Date',
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: Theme.of(context)
-                                .textTheme
-                                .headline6
-                                ?.fontFamily,
-                          ),
-                        ),
+                      // TextButton(
+                      //   onPressed: _presentDatePicker,
+                      //   child: Text(
+                      //     'Choose Date',
+                      //     style: TextStyle(
+                      //       color: Theme.of(context).primaryColor,
+                      //       fontWeight: FontWeight.w600,
+                      //       fontFamily: Theme.of(context)
+                      //           .textTheme
+                      //           .headline6
+                      //           ?.fontFamily,
+                      //     ),
+                      //   ),
+                      // ),
+                      AdaptiveFlatButton(
+                        'Choose Date',
+                        _presentDatePicker,
                       ),
                     ],
                   ),

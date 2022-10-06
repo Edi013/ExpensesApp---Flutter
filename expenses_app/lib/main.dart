@@ -175,6 +175,43 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  List<Widget> _buildPortrait(
+    MediaQueryData mediaQuery,
+    AppBar appBar,
+    Widget txListWidget,
+  ) {
+    return [
+      Container(
+        height: (mediaQuery.size.height -
+                appBar.preferredSize.height -
+                mediaQuery.padding.top) *
+            0.23,
+        child: Chart(_userTransactions),
+      ),
+      txListWidget
+    ];
+  }
+
+  List<Widget> _buildLandscape(
+    MediaQueryData mediaQuery,
+    AppBar appBar,
+    Widget txListWidget,
+    Widget switchChart,
+  ) {
+    return [
+      switchChart,
+      _showChart
+          ? Container(
+              height: (mediaQuery.size.height -
+                      appBar.preferredSize.height -
+                      mediaQuery.padding.top) *
+                  0.7,
+              child: Chart(_userTransactions),
+            )
+          : txListWidget
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -221,25 +258,18 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (!isLandscape)
-            Container(
-              height: (mediaQuery.size.height -
-                      appBar.preferredSize.height -
-                      mediaQuery.padding.top) *
-                  0.23,
-              child: Chart(_userTransactions),
+            ..._buildPortrait(
+              mediaQuery,
+              appBar,
+              txListWidget,
             ),
-          if (!isLandscape) txListWidget,
-          if (isLandscape) switchChart,
           if (isLandscape)
-            _showChart
-                ? Container(
-                    height: (mediaQuery.size.height -
-                            appBar.preferredSize.height -
-                            mediaQuery.padding.top) *
-                        0.7,
-                    child: Chart(_userTransactions),
-                  )
-                : txListWidget
+            ..._buildLandscape(
+              mediaQuery,
+              appBar,
+              txListWidget,
+              switchChart,
+            ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
