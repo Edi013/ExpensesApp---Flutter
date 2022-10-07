@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:io';
 
 //widgets
 import './widgets/new_transaction.dart';
@@ -212,22 +214,48 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-    final isLandscape = mediaQuery.orientation == Orientation.landscape;
-    final appBar = AppBar(
+  CupertinoNavigationBar buildIOSNavigationBar() {
+    return CupertinoNavigationBar(
+      middle: Text(
+        "Expenses",
+        style: Theme.of(context).appBarTheme.titleTextStyle,
+      ),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          GestureDetector(
+            child: Icon(CupertinoIcons.add),
+            onTap: () => _startAddNewTransaction(context),
+          ),
+        ],
+      ),
+    );
+  }
+
+  AppBar buildAndroidAppBar() {
+    return AppBar(
       title: Text(
-        "ExpensesApp",
+        "Expenses",
         style: Theme.of(context).appBarTheme.titleTextStyle,
       ),
       actions: <Widget>[
         IconButton(
           onPressed: () => _startAddNewTransaction(context),
-          icon: Icon(Icons.add),
+          icon: const Icon(Icons.add),
         ),
       ],
     );
+  }
+
+  Widget chooseAppBar() {
+    return Platform.isIOS ? buildIOSNavigationBar() : buildAndroidAppBar();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    final isLandscape = mediaQuery.orientation == Orientation.landscape;
+    final PreferredSizeWidget appBar = chooseAppBar();
     var switchChart = SizedBox(
       height: 40,
       child: Row(
@@ -273,7 +301,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () => _startAddNewTransaction(context),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
