@@ -39,6 +39,9 @@ expenses_app.iml
 .dart_tool
 .idea
 /.packages
+**macos/
+**.dart_tool/
+
 
 
 # Symbolication related

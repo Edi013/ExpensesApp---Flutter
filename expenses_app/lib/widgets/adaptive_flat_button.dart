@@ -21,7 +21,7 @@ class AdaptiveFlatButton extends StatelessWidget {
               ),
             ),
           )
-        : FlatButton(
+        : TextButton(
             onPressed: handler,
             child: Text(
               text,
