@@ -41,6 +41,8 @@ expenses_app.iml
 /.packages
 **.dart_tool/
 **macos/
+**android/
+**ios/
 
 
 
